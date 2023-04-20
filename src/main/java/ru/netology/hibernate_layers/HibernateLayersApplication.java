@@ -41,7 +41,7 @@ public class HibernateLayersApplication implements CommandLineRunner {
                         .city_in_living(cities.get(ThreadLocalRandom.current().nextInt(cities.size())))
                         .phone_number("8999-222-33-1" + ThreadLocalRandom.current().nextInt(10, 99))
                         .build();
-                    entityManager.persist(person);
+//                    entityManager.persist(person);
                 });
 
 
