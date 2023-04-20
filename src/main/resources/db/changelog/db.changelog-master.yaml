@@ -1,7 +1,13 @@
 databaseChangeLog:
   - include:
-      file: migration/V001/create_person_table.sql
+      file: migration/V001/create-table-customer.sql
       relativeToChangelogFile: true
   - include:
-      file: migration/V001/insert-value-table-person.sql
+      file: migration/V001/create-table-orders.sql
+      relativeToChangelogFile: true
+  - include:
+      file: migration/V001/insert-value-table-customers.sql
+      relativeToChangelogFile: true
+  - include:
+      file: migration/V001/insert-value-table-orders.sql
       relativeToChangelogFile: true
