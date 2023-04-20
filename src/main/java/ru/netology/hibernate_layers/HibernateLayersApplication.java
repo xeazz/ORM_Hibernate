@@ -29,7 +29,6 @@ public class HibernateLayersApplication implements CommandLineRunner {
         List<String> cities = List.of("Saint-Petersburg", "Moscow", "Yekaterinburg", "Novosibirsk");
         List<String> names = List.of("Ivan", "Pavel", "Anton", "Dima", "Slava", "Viktor");
         List<String> surnames = List.of("Pavlov", "Viktorov", "Semenov", "Petrov", "Vovochkin", "Ivanov");
-        Random random = new Random();
         IntStream.range(0, 10)
                 .forEach(x -> {
                         Person person = Person.builder()
