@@ -13,5 +13,5 @@ public class Person {
     @EmbeddedId
     private PersonFirstKey personFirstKey;
     private String phone_number;
-    private String city_in_living;
+    private String city;
 }

@@ -12,6 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
+
 public class PersonFirstKey implements Serializable {
     @Column(nullable = false)
     private String name;
@@ -20,4 +21,10 @@ public class PersonFirstKey implements Serializable {
     @Column(nullable = false)
     private int age;
 
+    @Override
+    public String toString() {
+        return name + " " +
+                surname + " "  +
+                 age + " года";
+    }
 }
