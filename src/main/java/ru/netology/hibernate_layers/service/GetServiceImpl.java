@@ -16,7 +16,7 @@ public class GetServiceImpl implements GetService {
 
     @Override
     public List<Person> getPersonsByCity(String city) {
-        List<Person> personList = getRepository.findPersonByCity(city);
+        List<Person> personList = getRepository.findPersonByCityJPQL(city);
         if (personList.isEmpty()) {
             throw new IncorrectInputDataException("Пользователей с таким городом не найдено");
         }
@@ -25,7 +25,7 @@ public class GetServiceImpl implements GetService {
 
     @Override
     public List<Person> getPersonsByAge(int age) {
-        List<Person> personList = getRepository.findPersonByPersonFirstKeyAgeLessThanOrderByPersonFirstKeyAge(age);
+        List<Person> personList = getRepository.findPersonByPersonFirstKeyAgeLessThanOrderByPersonFirstKeyAgeJPQL(age);
         if (personList.isEmpty()) {
             throw new IncorrectInputDataException("Пользователей с таким возрастом не найдено");
         }
@@ -34,7 +34,7 @@ public class GetServiceImpl implements GetService {
 
     @Override
     public Optional<Person> getPersonsByNameAndSurname(String name, String surname) {
-        Optional<Person> person = getRepository.findPersonByPersonFirstKeyNameAndPersonFirstKeySurname(name, surname);
+        Optional<Person> person = getRepository.findPersonByPersonFirstKeyNameAndPersonFirstKeySurnameJPQL(name, surname);
         if (person.isEmpty()) {
             throw new IncorrectInputDataException("Пользователь с таким именем и фамилией не найдены!");
         }
@@ -48,7 +48,7 @@ public class GetServiceImpl implements GetService {
 
     @Override
     public Person update(Person person) {
-        Optional<Person> optionalPerson = getRepository.findPersonByPersonFirstKey(person.getPersonFirstKey());
+        Optional<Person> optionalPerson = getRepository.findPersonByPersonFirstKeyJPQL(person.getPersonFirstKey());
         if (optionalPerson.isEmpty()) {
             throw new IncorrectInputDataException("Пользователь не найден:( Изменять нечего...");
         }
@@ -59,7 +59,7 @@ public class GetServiceImpl implements GetService {
 
     @Override
     public String delete(Person person) {
-        Optional<Person> optionalPerson = getRepository.findPersonByPersonFirstKey(person.getPersonFirstKey());
+        Optional<Person> optionalPerson = getRepository.findPersonByPersonFirstKeyJPQL(person.getPersonFirstKey());
         if (optionalPerson.isEmpty()) {
             throw new IncorrectInputDataException("Пользователь не найден:( Нельзя удалить...");
         }
