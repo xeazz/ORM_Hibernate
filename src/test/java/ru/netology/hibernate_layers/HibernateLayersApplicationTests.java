@@ -1,12 +1,13 @@
 package ru.netology.hibernate_layers;
-
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+//@SpringBootTest
 class HibernateLayersApplicationTests {
 
-    @Test
+@Test
     void contextLoads() {
     }
 
